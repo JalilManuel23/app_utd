@@ -38,14 +38,19 @@ header{
 
 /* Estilos de los formularios */
 .contenedor-form{
-    width: 60%;
-    height: 80%;
+    width: 30%;
+    height: 90%;
     background: #ffffff;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.16), 0 0 6px rgba(0, 0, 0, 0.23);
     border-radius: 15px;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.contenedor-form img{
+    width: 60%;
 }
 
 form{
