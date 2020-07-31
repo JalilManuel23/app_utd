@@ -54,48 +54,55 @@
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">	
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">   
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        
-        <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/estilos.css">
-        <title>LOGIN DE ACCESO</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    </head>
-    <body>
-        <header>
-            <div class="contenedor-header">
-                <img src="../img/UTD.png" alt="Logo de la UTD">
-                <h1>Acceso al Sistema</h1>
-                <div></div>
-            </div>
-        </header>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-            <!-- <img src="../img/usua.png"> -->
-        
-            <!-- <form action="comprueba.php" method="post"> -->
-        <main>
-            <div class="contenedor-form">
-                <img src="../img/usua.png" alt="Usuarios">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-                    <h2>Login</h2>
-                    <div class="elemento-form">
-                        <label for="nombre">Usuario</label>
-                        <input type="text" name="nombre"  required class="input fontAwesome" placeholder="Usuario">
-                    </div>
-                    <div class="elemento-form">
-                        <label for="nombre">Contraseña</label>
-                        <input type="password" name="pass" required class="input" placeholder="Contraseña">
-                    </div>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>LOGIN DE ACCESO</title>
+
+</head>
+
+<body>
+    <header class="bg-dark">
+        <div class="container">
+            <nav class="row navbar-dark">
+                <a class="col-md-4 text-center" href="#"><img src="../img/UTD.png" alt="Logo UTD" /></a>
+                <h3 class="col-md-4 titulo">Acceso al Sistema</h3>
+            </nav>
+        </div>
+    </header>
+    <!-- <img src="../img/usua.png"> -->
+
+    <!-- <form action="comprueba.php" method="post"> -->
+    <div class="container">
+        <div class="row contenedor-form justify-content-center align-items-center">
+            <form class="d-flex flex-column justify-content-around align-items-center col-md-6 col-11" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                <img class="" src="../img/usua.png" alt="Usuarios">
+                <h2>Login</h2>
+                <div class="elemento-form">
+                    <label for="nombre">Usuario</label>
+                    <input type="text" name="nombre" required class="input" placeholder="Usuario">
+                </div>
+                <div class="elemento-form">
+                    <label for="nombre">Contraseña</label>
+                    <input type="password" name="pass" required class="input" placeholder="Contraseña">
+                </div>
+                <div class="elemento-form">
                     <input type="submit" name="enviar" value="ENTRAR" class="boton">
-                    <input type="reset" name="borrar" value="BORRAR"  class="boton">
-                </form>
-            </div>
-        </main>
-    
-  </body>
+                    <input type="reset" name="borrar" value="BORRAR" class="boton">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
 </html>

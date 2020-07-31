@@ -6,109 +6,108 @@ body{
     background-color: #F3F4F6;
 }
 
+.contenedor-form{
+    height: 90vh;
+}
+
 /* Fin estilos Generales */
 
 /* Estilos del header */
 header{
-    height: 10vh;
-    background: #232931;
     color: white;
-    /* border-bottom: 2px solid #eeeeee; */
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.contenedor-header{
-    max-width: 1280px;
-    width: 70%;
-    margin: auto;
+nav h3{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.contenedor-header img{
-    width: 120px;
-    height: 60px;
-}
 
-.contenedor-header div{
-    width: 120px;
-}
 /* Fin de estilos del Header */
 
 /* Estilos de los formularios */
-.contenedor-form{
-    width: 30%;
-    height: 90%;
-    background: #ffffff;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.16), 0 0 6px rgba(0, 0, 0, 0.23);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.contenedor-form img{
-    width: 60%;
-}
-
 form{
-    height: 80%;
     color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 form input{
     border-radius: 80px;
     border: none;
+    margin-top: 10px;
+    height: 50px;
+    width: 80%;
+}
+
+form img{
+    width: 25vmin;
 }
 
 label{
-    padding: 0 30px;
+    width: 75%;
 }
 
 .input{
-    margin-top: 20px;
-    line-height: 1.5;
     color: #666666;
-    width: 100%;
     background: #e6e6e6;
-    height: 50px;
     border-radius: 25px;
-    padding: 30px;
+    padding: 0 30px;
 }
 
 .input:focus{
     transform: scale(1.05);
+    background: #c8c8c8;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .elemento-form{
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: left;
+    width: 100%;
 }
 
 .boton{
     border-radius: 25px;
     font-weight: 900;
     background: #57b846;
-    padding: 0 25px;
-    width: 100%;
-    height: 50px;
     transition: all 0.4s;
     color: white;
+    padding: 0 30px;
+}
+
+.boton:hover{
+    transform: scale(1.01);
+    background-color: #339522;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.boton:active{
+    background-color: #176909;
+}
+
+@media screen and (max-width: 576px){
+    .titulo{
+        display: none;
+    }
+
+    body{
+        background-color: white;
+    }
+
+    form{
+        box-shadow: none;
+    }
+
+    form input{
+        width: 90%;
+    }
 }
 /* Fin de estilos de los formularios */
-
-/* Estilos Login */
-main{
-    width: 100vw;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/* Fin de estilos de Login */
