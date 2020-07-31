@@ -1,3 +1,7 @@
+/* Variables */
+:root {
+    --sombra: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 /* Estilos Generales */
 body{
     padding: 0;
@@ -15,7 +19,7 @@ body{
 /* Estilos del header */
 header{
     color: white;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: var(--sombra);
 }
 
 nav h3{
@@ -28,15 +32,15 @@ nav h3{
 /* Fin de estilos del Header */
 
 /* Estilos de los formularios */
-form{
+.formulario{
     color: black;
     background-color: white;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: var(--sombra);
 }
 
-form input{
+.formulario input{
     border-radius: 80px;
     border: none;
     margin-top: 10px;
@@ -44,7 +48,7 @@ form input{
     width: 80%;
 }
 
-form img{
+.formulario img{
     width: 25vmin;
 }
 
@@ -62,7 +66,7 @@ label{
 .input:focus{
     transform: scale(1.05);
     background: #c8c8c8;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: var(--sombra);
 }
 
 .elemento-form{
@@ -86,7 +90,7 @@ label{
 .boton:hover{
     transform: scale(1.01);
     background-color: #339522;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: var(--sombra);
 }
 
 .boton:active{
@@ -102,12 +106,51 @@ label{
         background-color: white;
     }
 
-    form{
+    .formulario{
         box-shadow: none;
     }
 
-    form input{
+    .formulario input{
         width: 90%;
     }
 }
 /* Fin de estilos de los formularios */
+
+/* Estilos Menú */
+input[type="radio"]{
+    display: none;
+}
+
+.opciones label{
+    height: 25vmin;
+    width: 25vmin;
+    border-radius: 15px;
+    color: white;
+}
+
+.opciones label:hover{
+    box-shadow: var(--sombra);
+    transform: scale(1.005);
+    cursor: pointer;
+}
+
+.opciones label[for="alta"]{
+    background:#05b448;
+}
+
+.opciones label[for="baja"]{
+    background:#aa3c2e;
+}
+
+.opciones label[for="consulta"]{
+    background:#1858d8;
+}
+
+.opciones label[for="modificar"]{
+    background:#ecd71e;
+}
+
+.opciones{
+    height: 45vmin;
+}
+/* Fin de estilos de Menú */

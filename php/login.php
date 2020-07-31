@@ -4,6 +4,7 @@
     session_destroy();
   }
  
+  $mensaje = 'ninguno';
 
   if ($_SERVER["REQUEST_METHOD"] == "POST")
   {
@@ -33,20 +34,12 @@
           $_SESSION['priv']="admin";
         else if($priv=="estandar")
           $_SESSION['priv']="estandar";
-       
-          echo "<script> alert('Inicio de Sesion, - B I E N V E N I D O -');
-                         location.href='menu.php'; 
-               </script> ";
-        
-          //header('Location: menu.php');
 
+        $mensaje = 'correcto';
     }
     else
      {
-       echo "<script>
-              window.alert('Usuario y/o Contraseña incorrectas, por favor verifique ... ');
-              window.location.href='login.php';
-            </script> ";   
+        $mensaje = 'incorrecto';
      }
      
   }
@@ -64,6 +57,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/estilos.css">
@@ -85,7 +79,7 @@
     <!-- <form action="comprueba.php" method="post"> -->
     <div class="container">
         <div class="row contenedor-form justify-content-center align-items-center">
-            <form class="d-flex flex-column justify-content-around align-items-center col-md-6 col-11" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+            <form class="formulario d-flex flex-column justify-content-around align-items-center col-md-6 col-11" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <img class="" src="../img/usua.png" alt="Usuarios">
                 <h2>Login</h2>
                 <div class="elemento-form">
@@ -104,5 +98,35 @@
         </div>
     </div>
 </body>
-
+<?php 
+if($mensaje == 'incorrecto'){
+?>
+    <script>
+        function alerta(){
+            swal({
+                title: "Usuario o contraseña incorrectos",
+                text: "Por favor verifique",
+                icon: "error",
+            });
+        }
+        alerta();                   
+    </script>
+<?php
+}elseif($mensaje == 'correcto'){
+?>
+    <script>
+        function alerta(){
+            swal({
+                title: "¡Sesión iniciada correctamente!",
+                text: "De click en el botón para continuar",
+                icon: "success",
+            }).then(function() {
+                window.location = "menu.php";
+            });
+        }
+        alerta();                   
+    </script>
+<?php
+}
+?>
 </html>
