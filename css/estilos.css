@@ -143,8 +143,9 @@ input[type="radio"]{
 }
 
 .opciones label{
-    height: 25vmin;
-    width: 25vmin;
+    width: 20vmin;
+    max-width: 90%;
+    height: 20vmin;
     border-radius: 15px;
     color: white;
     background-color: var(--verde);
