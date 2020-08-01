@@ -26,6 +26,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/estilos.css">
     <title>MENÚ</title>
 </head>
@@ -34,35 +35,81 @@
     <header class="bg-dark">
         <div class="container">
             <nav class="row navbar-dark">
-                <a class="col-md-4 text-center" href="#"><img src="../img/UTD.png" alt="Logo UTD" /></a>
-                <h3 class="col-md-4 titulo">Menú</h3>
+                <a class="col-md-4 d-flex justify-content-md-start justify-content-center" href="#"><img src="../img/UTD.png"
+                        alt="Logo UTD" /></a>
+                <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <h3 class="titulo">
+                        Menú
+                    </h3>
+                </div>
             </nav>
         </div>
     </header>
     <form action="acciones.php" method="post" class="container">
-        <div class="row d-flex justify-content-around align-items-center opciones">
-          
-          <label for="alta">f</label>
-          <input type="radio" name="opcion" id="alta">
+        <div class="cont-opciones">
+            <p class="row d-flext justify-content-center">
+                ¿Qué desea realizar?
+            </p>
+            <div class="row  opciones">
+                <?php
+        if ($priv=="admin")
+        {
+        ?>
+                <div class="p-opciones d-flex flex-column align-items-center col-md-3 col-6">
+                    <input type="radio" name="opcion" id="alta">
+                    <label for="alta" id="lbl-alta"
+                        class="d-flex justify-content-center align-items-center icon-plus-square"></label>
+                    <p>Alta</p>
+                </div>
 
-          <label for="baja"></label>
-          <input type="radio" name="opcion" id="baja">
+                <div class="p-opciones d-flex flex-column align-items-center col-md-3 col-6">
+                    <input type="radio" name="opcion" id="baja">
+                    <label for="baja" id="lbl-baja"
+                        class="d-flex justify-content-center align-items-center icon-trash"></label>
+                    <p>Baja</p>
+                </div>
 
-          <label for="consulta"></label>
-          <input type="radio" name="opcion" id="consulta">
-
-          <label for="modificar"></label>
-          <input type="radio" name="opcion" id="modificar">
-          
+                <div class="p-opciones d-flex flex-column align-items-center col-md-3 col-6">
+                    <input type="radio" name="opcion" id="consulta">
+                    <label for="consulta" id="lbl-consulta"
+                        class="d-flex justify-content-center align-items-center icon-search-1"></label>
+                    <p>Consulta</p>
+                </div>
+                <div class="p-opciones d-flex flex-column align-items-center col-md-3 col-6">
+                    <input type="radio" name="opcion" id="modificar">
+                    <label for="modificar" id="lbl-modificar"
+                        class="d-flex justify-content-center align-items-center icon-pencil-square"></label>
+                    <p>Modificación</p>
+                </div>
+                <?php
+        }
+        else if ($priv=="estandar")
+        {
+        ?>
+                <div class="p-opciones d-flex flex-column align-items-center">
+                    <input type="radio" name="opcion" id="consulta">
+                    <label for="consulta" id="lbl-consulta"
+                        class="d-flex justify-content-center align-items-center icon-search-1"></label>
+                    <p>Consulta</p>
+                </div>
+                <?php
+        }
+        ?>
+            </div>
         </div>
 
-        <div class="row">
-          
+        <div class="row d-flext flex-column align-items-center cont-opciones">
+            <p>Seleccione una tabla</p>
+            <select name="tabla" required>
+                <option value="a">Alumnos</option>
+                <option value="c">Contactos</option>
+                <option value="u">Usuarios</option>
+            </select>
         </div>
 
-        <div class="row">
-          <input type="submit" name="enviar" value="Enviar">
-          <input type="reset" name="borrar" value="Borrar">
+        <div class="row d-flext  justify-content-around cont-opciones fila-botones">
+            <input class="boton col-md-3" type="submit" name="enviar" value="Enviar">
+            <input class="boton col-md-3" type="reset" name="borrar" value="Borrar">
         </div>
         <!-- <table align="center">
             <tr>
@@ -102,9 +149,11 @@
         <input type="hidden" name="us" value="<? echo $us; ?>">
         <input type="hidden" name="ps" value="<? echo $ps; ?>">
     </form>
-    <a href='login.php'>
-        <h3 align=center>Cerrar sesión de <?php echo $us ?></h3>
-    </a>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <a class="icon-sign-out cerrar-sesion" href="login.php">Cerrar Sesión de <?php echo $us ?></a>
+        </div>
+    </div>
 </body>
 
 </html>

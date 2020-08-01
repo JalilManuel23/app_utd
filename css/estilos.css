@@ -1,6 +1,12 @@
 /* Variables */
 :root {
     --sombra: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    --verde-gral: #57b846;
+    --verde-hover: #339522;
+    --verde-active: #176909;
+    --verde: #07b195;
+    --naranja: #cc9914;
+    --amarillo:#ecc540;
 }
 /* Estilos Generales */
 body{
@@ -14,12 +20,17 @@ body{
     height: 90vh;
 }
 
+.cerrar-sesion, .cerrar-sesion::before{
+    color: rgb(11, 100, 202);
+    margin-top: 10px;
+}
 /* Fin estilos Generales */
 
 /* Estilos del header */
 header{
     color: white;
     box-shadow: var(--sombra);
+    background-color: #577590;
 }
 
 nav h3{
@@ -40,7 +51,7 @@ nav h3{
     box-shadow: var(--sombra);
 }
 
-.formulario input{
+.formulario input, .fila-botones input{
     border-radius: 80px;
     border: none;
     margin-top: 10px;
@@ -56,6 +67,12 @@ label{
     width: 75%;
 }
 
+label::before{
+    color: #666;
+    margin-right: 5px;
+}
+
+a::before{color: white;}
 .input{
     color: #666666;
     background: #e6e6e6;
@@ -81,7 +98,7 @@ label{
 .boton{
     border-radius: 25px;
     font-weight: 900;
-    background: #57b846;
+    background: var(--verde-gral);
     transition: all 0.4s;
     color: white;
     padding: 0 30px;
@@ -89,12 +106,12 @@ label{
 
 .boton:hover{
     transform: scale(1.01);
-    background-color: #339522;
+    background-color: var(--verde-hover);
     box-shadow: var(--sombra);
 }
 
 .boton:active{
-    background-color: #176909;
+    background-color: var(--verde-active);
 }
 
 @media screen and (max-width: 576px){
@@ -121,36 +138,66 @@ input[type="radio"]{
     display: none;
 }
 
+.cont-opciones{
+    padding: 20px;
+}
+
 .opciones label{
     height: 25vmin;
     width: 25vmin;
     border-radius: 15px;
     color: white;
+    background-color: var(--verde);
 }
 
+.opciones label:hover{
+    background: #059980;
+}
 .opciones label:hover{
     box-shadow: var(--sombra);
     transform: scale(1.005);
     cursor: pointer;
 }
 
-.opciones label[for="alta"]{
-    background:#05b448;
+.opciones label:hover ~ p{
+    transform: scale(1.09);
+    font-weight: 500;
 }
 
-.opciones label[for="baja"]{
-    background:#aa3c2e;
+.p-opciones{
+   width: 25vmin; 
 }
 
-.opciones label[for="consulta"]{
-    background:#1858d8;
+.p-opciones label::before{
+    font-size: 8vmin;
+    color: white;
 }
 
-.opciones label[for="modificar"]{
-    background:#ecd71e;
+select{
+    width: 30vmin;
+    border-radius: 6px;
+    padding: 5px;
 }
 
-.opciones{
-    height: 45vmin;
+select:hover{
+    box-shadow: var(--sombra);
+    cursor: pointer;
+}
+
+#alta:checked ~ #lbl-alta, #baja:checked ~ #lbl-baja,
+#consulta:checked ~ #lbl-consulta, #modificar:checked ~ #lbl-modificar{
+    background-color: #057260;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+#alta:checked ~ p, #baja:checked ~ p,
+#consulta:checked ~ p, #modificar:checked ~ p{
+    font-weight: 500;
+}
+
+@media screen and(max-width: 768px){
+    .opciones{
+        flex-direction: column;
+    }
 }
 /* Fin de estilos de Menú */

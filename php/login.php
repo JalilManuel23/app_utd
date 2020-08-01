@@ -60,6 +60,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/estilos.css">
     <title>LOGIN DE ACCESO</title>
 
@@ -69,7 +70,7 @@
     <header class="bg-dark">
         <div class="container">
             <nav class="row navbar-dark">
-                <a class="col-md-4 text-center" href="#"><img src="../img/UTD.png" alt="Logo UTD" /></a>
+                <a class="col-md-4 d-flex justify-content-md-start justify-content-center" href="#"><img src="../img/UTD.png" alt="Logo UTD" /></a>
                 <h3 class="col-md-4 titulo">Acceso al Sistema</h3>
             </nav>
         </div>
@@ -83,11 +84,11 @@
                 <img class="" src="../img/usua.png" alt="Usuarios">
                 <h2>Login</h2>
                 <div class="elemento-form">
-                    <label for="nombre">Usuario</label>
+                    <label for="nombre" class="icon-user">Usuario</label>
                     <input type="text" name="nombre" required class="input" placeholder="Usuario">
                 </div>
                 <div class="elemento-form">
-                    <label for="nombre">Contraseña</label>
+                    <label for="nombre" class="icon-lock">Contraseña</label>
                     <input type="password" name="pass" required class="input" placeholder="Contraseña">
                 </div>
                 <div class="elemento-form">
