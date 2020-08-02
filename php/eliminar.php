@@ -35,13 +35,43 @@
 	if ($resultado) 
 	{
 		//echo "<h4 align=center>Se ha eliminado el registro correctamente</h4>";
-		echo "<script> alert('Registro eliminado correctamente'); </script> ";
+		include('menu.php');
+		?>
+			<script>
+				swal({
+					title: "¿Está seguro que desea eliminar este registro?",
+					text: "Confirme para borrar el registro",
+					icon: "warning",
+					buttons: true,
+					dangerMode: true,
+				})
+				.then((willDelete) => {
+				if (willDelete) {
+					swal("¡Registro eliminado!", {
+					icon: "success",
+					});
+				} else {
+					swal("¡El registro NO ha sido eliminado!");
+				}
+				});
+			</script>
+		<?php
 	}
 	else 
 	{
 		//echo "Error";
-		echo "<script> alert('Error fallo la eliminación, verifique ...'); </script> ";
+		?>
+		<script>
+			function alerta(){
+				swal({
+					title: "Error al eliminar registro",
+					text: "Por favor verifique",
+					icon: "error",
+				});
+			}
+			alerta();                   
+		</script>
+	<?php
 	}
-	//echo "<a href='comprueba.php'><h4 align=center >Volver</h4></a>";
-	echo "<script> location.href='menu.php'; </script> ";
+
 ?>

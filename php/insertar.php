@@ -1,9 +1,4 @@
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	   
-	</head>
 <?php
-	session_start();
 	include_once 'conectar_utd.php';
 	$tab=$_POST['tab'];
 
@@ -35,20 +30,40 @@
 	}
 
 	$resultado=mysqli_query($conexion, $consulta);
-
+	include('menu.php');
 	if($resultado) 
 		{
 			//echo "<br><h4 align=center>Usuario agregado correctamente</h4>";
-			echo "<script> alert('Registro agregado correctamente');
-		                  location.href='menu.php'; 
-                  </script> ";
+			?>
+    <script>
+        function alerta(){
+            swal({
+                title: "¡Registro agregado correctamente!",
+                text: "De click en el botón para continuar",
+                icon: "success",
+            }).then(function() {
+                window.location = "menu.php";
+            });
+        }
+        alerta();                   
+    </script>
+<?php
 		} 
 		else 
 		{
 			//echo "<br><h4 align=center><font color='red'>"."Error al agregar usuario"."</font></h4>";
-			echo "<script> alert('Error al agregar el registro, verifique por favor ...');
-		                  location.href='menu.php'; 
-                  </script> ";
+			?>
+    <script>
+        function alerta(){
+            swal({
+                title: "Error al agregar registro",
+                text: "Por favor verifique",
+                icon: "error",
+            });
+        }
+        alerta();                   
+    </script>
+<?php
 		}
 		//echo "<a href='menu.php'><h4 align=center >Volver</h4></a>";
 

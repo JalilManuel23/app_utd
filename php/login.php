@@ -75,9 +75,7 @@
             </nav>
         </div>
     </header>
-    <!-- <img src="../img/usua.png"> -->
 
-    <!-- <form action="comprueba.php" method="post"> -->
     <div class="container">
         <div class="row contenedor-form justify-content-center align-items-center">
             <form class="formulario d-flex flex-column justify-content-around align-items-center col-md-6 col-11" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">

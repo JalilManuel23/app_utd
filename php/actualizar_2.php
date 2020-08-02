@@ -43,17 +43,38 @@
 
 
 	   $resultado=mysqli_query($conexion, $consulta);
-
+	   include('menu.php');
 		if($resultado) {
-			//echo "<br><h4 align=center>Usuario modificado correctamente</h4>";
-			echo "<script> alert('Registro modificado correctamente'); </script> ";
-		} else {
-			//echo  "<font color='red'>"."Error al modificar usuario"."</font>";
-			echo "<script> alert('Error fallo la modificación, verifique ...'); </script> ";
+			?>
+			<script>
+				function alerta(){
+					swal({
+						title: "¡Registro modificado correctamente!",
+						text: "De click en el botón para continuar",
+						icon: "success",
+					}).then(function() {
+						window.location = "menu.php";
+					});
+				}
+				alerta();                   
+			</script>
+		<?php
+		} 
+		else 
+		{
+					//echo "<br><h4 align=center><font color='red'>"."Error al agregar usuario"."</font></h4>";
+					?>
+			<script>
+				function alerta(){
+					swal({
+						title: "Error al modificar registro",
+						text: "Por favor verifique",
+						icon: "error",
+					});
+				}
+				alerta();                   
+			</script>
+		<?php
 		}
-		//echo "<a href='alumnos1.php'><h3 align=center >Volver</h3></a>";
-		echo "<script> location.href='menu.php'; </script> ";
-
-		
-
-?>
+				//echo "<a href='menu.php'><h4 align=center >Volver</h4></a>";
+		?>

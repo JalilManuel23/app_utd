@@ -17,7 +17,7 @@ body{
 }
 
 .contenedor-form{
-    height: 90vh;
+    min-height: 90vh;
 }
 
 .cerrar-sesion, .cerrar-sesion::before{
@@ -49,14 +49,27 @@ nav h3{
     padding: 25px;
     border-radius: 10px;
     box-shadow: var(--sombra);
+    margin-top: 5px;
 }
 
-.formulario input, .fila-botones input{
+.formulario input, .fila-botones input, .volver{
     border-radius: 80px;
     border: none;
     margin-top: 10px;
     height: 50px;
     width: 80%;
+}
+
+.volver{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.volver:hover{
+    text-decoration: none;
+    color: white;
 }
 
 .formulario img{
@@ -187,18 +200,109 @@ select:hover{
 
 #alta:checked ~ #lbl-alta, #baja:checked ~ #lbl-baja,
 #consulta:checked ~ #lbl-consulta, #modificar:checked ~ #lbl-modificar{
-    background-color: #057260;
-    border: 2px solid rgb(0, 0, 0);
+    background-color: var(--amarillo);
 }
 
 #alta:checked ~ p, #baja:checked ~ p,
 #consulta:checked ~ p, #modificar:checked ~ p{
     font-weight: 500;
 }
+/* Fin de estilos de Menú */
 
-@media screen and(max-width: 768px){
-    .opciones{
-        flex-direction: column;
+/* Estilos de consultas */
+th{
+    font-size: 1em;
+    display: table-cell;
+}
+
+td{
+    width: auto;
+    display: table-cell;
+}
+
+.content{
+    padding: 1.8em;
+}
+
+.table{
+    width: 100%;
+    border-spacing: 0;
+}
+
+.table td, .table th{
+    padding: 1em;
+    text-align: left;
+}
+
+.table tr:nth-child(even){
+    background: rgb(216, 245, 236);
+}
+
+.content{
+    position: relative;
+    max-width: 960px;
+    width: 100%;
+    height: 60vh;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 4px;
+    padding: 1.8em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.num-regs{
+    font-size: 2.5vmin;
+}
+/* Fin de estilos de consultas */
+
+@media screen and (max-width: 768px){
+    td{
+        display: block;
+        width: 100%;
+    }
+    
+    td:nth-of-type(1){
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    
+    th{
+        display: none;
+    }
+
+    .num-regs{
+        font-size: 4vmin;
     }
 }
-/* Fin de estilos de Menú */
+
+/* Estilos de los botones de las tablas */
+.boton-tabla{
+    padding: 10px;
+    color: white;
+    border-radius: 50px;
+}
+
+.boton-tabla:hover{
+    transform: scale(1.1);
+    box-shadow: var(--sombra);
+    text-decoration: none;
+    color: white;
+}
+
+.btn-borrar{
+    background-color: #e45042;
+}
+
+.btn-borrar:hover{
+    background-color: #bd2a1d;
+}
+
+.btn-modificar{
+    background-color: var(--amarillo);
+}
+
+.btn-modificar:hover{
+    background-color: var(--naranja);
+}
+/* Fin de los Estilos de los botones de las tablas */
